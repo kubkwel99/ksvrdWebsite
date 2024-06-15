@@ -1,6 +1,7 @@
 /** @format */
 import { motion } from 'framer-motion';
 import { slideUp, slide } from './../assets/motion';
+import React from 'react';
 
 const HomePage = () => {
   return (

@@ -15,13 +15,13 @@ export const videos: Video[] = [
     id: 1,
     title: 'Royal Kebab',
     url: 'src/assets/videos/0013.mp4',
-    desc: 'of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+    desc: 'Chce to cvik, skusat + sa inspirovat od lepsich fakt uplne najviac odporucam pozerat si IG, TT a vsimat si z akeho uhlu je to fotene/natacane (inak niekedy je napr. fajn mobil otocit "hore nohami", to ma zas inu perspektivu), odkial ide svetlo, ake strihy su tam spravene. A su aj ucty, ktore natacaju presne taketo tipy, ze ukazuju spoza kamery/fotaku ako sa ta fotka/video tvorilo + vysledok.',
   },
   {
     id: 2,
     title: 'Royal Kebab',
     url: 'src/assets/videos/0012.mp4',
-    desc: 'of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+    desc: 'Aj videá sa dajú natáčať geniálne jednoducho. Trvalo mi to 2 roky. Že nepotrebujem štáb ľudí okolo seba! Kým som našla spôsob.',
   },
   {
     id: 3,

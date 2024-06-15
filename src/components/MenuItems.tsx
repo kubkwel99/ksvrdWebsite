@@ -19,10 +19,5 @@ export const menuItems = [
     cName: 'navbarLinks',
     icon: 'fas fa-briefcase',
   },
-  {
-    title: ' Kontakt',
-    url: '/#contact',
-    cName: 'navbarLinks',
-    icon: 'fas fa-address-book',
-  },
+
 ];

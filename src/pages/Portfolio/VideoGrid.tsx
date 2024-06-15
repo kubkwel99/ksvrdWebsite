@@ -1,10 +1,10 @@
 /** @format */
+
 import { motion } from 'framer-motion';
 import React, { useState, useEffect } from 'react';
 import './VideoPlayer.scss';
 import { Video, videos } from './VideoArray';
 import { useVideoFunctions } from './videoFunctions';
-import { useWindowFunctions } from './windowFunctions';
 import { fadeIn, staggerChildren, zoomIn } from '../../assets/motion';
 
 const VideoGrid: React.FC = () => {
@@ -13,29 +13,23 @@ const VideoGrid: React.FC = () => {
   const { selectedVideo, playVideo, closeVideo, handlePrevVideo, handleNextVideo } =
     useVideoFunctions();
 
-  //close div by ESC key
-  const handleKeyPress = (event: KeyboardEvent) => {
-    if (event.key === 'Escape') {
-      setIsVideoPlaying(false);
-      closeVideo();
-    }
-  };
+  useEffect(() => {
+    const handleKeyPress = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsVideoPlaying(false);
+        closeVideo();
+      }
+    };
 
-  useWindowFunctions(closeVideo, handleKeyPress);
+    window.addEventListener('keydown', handleKeyPress);
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [closeVideo]);
 
-  const handleVideoClose = () => {
-    setIsVideoPlaying(false);
-    closeVideo();
-  };
-
-  // turn off scroll if div is open/ turn on scrol if you close div /isPlaying Video=true.false
   useEffect(() => {
     const bodyElement = document.body;
-    if (isVideoPlaying) {
-      bodyElement.style.overflow = 'hidden';
-    } else {
-      bodyElement.style.overflow = 'auto';
-    }
+    bodyElement.style.overflow = isVideoPlaying ? 'hidden' : 'auto';
     return () => {
       bodyElement.style.overflow = 'auto';
     };
@@ -46,6 +40,11 @@ const VideoGrid: React.FC = () => {
     playVideo(video);
   };
 
+  const handleVideoClose = () => {
+    setIsVideoPlaying(false);
+    closeVideo();
+  };
+
   const variants = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -53,7 +52,6 @@ const VideoGrid: React.FC = () => {
 
   return (
     <>
-
       <a
         className='anchor absolute'
         id='portfolio'></a>
@@ -80,11 +78,11 @@ const VideoGrid: React.FC = () => {
           className='grid grid-cols-3 place-items-center gap-1 m-auto'
           style={{ maxWidth: 'auto' }}>
           {videos.map((video) => (
-            <motion.div className='w-150 h-150'>
+            <motion.div
+              key={video.id}
+              className='w-150 h-150'>
               <motion.video
                 variants={zoomIn((video.id + 1) * 0.2, 0.5)}
-                // variants={fadeIn('up', 'tween', (video.id + 1) * 0.3, 0.5)}
-                key={video.id}
                 src={video.url}
                 className='cursor-pointer w-72 h-auto object-cover'
                 style={{ aspectRatio: '1 / 1' }}
@@ -95,20 +93,12 @@ const VideoGrid: React.FC = () => {
         </motion.div>
         {selectedVideo && (
           <motion.div
-            // initial='hidden'
-            // whileInView='show'
-            // variants={zoomIn(0.3, 0.3)}
-
-            // initial={{ opacity: 0 }}
-            // whileInView={{ opacity: 1 }}
-            // viewport={{ once: true }}
-
             variants={variants}
             initial='hidden'
             animate='visible'
             transition={{ delay: 0.1, duration: 0.2 }}
             id='videoPlayer'
-            className='fixed top-0 left-0 z-10 w-screen h-screen flex flex-nowrap items-center justify-center bg-black bg-opacity-90 backdrop-blur-sm z-0'>
+            className='fixed top-0 left-0 z-10 w-screen h-screen flex flex-nowrap items-center justify-center bg-black bg-opacity-90 backdrop-blur-sm'>
             <div
               className='containerDiv relative bg-black flex flex-row flex-nowrap z-50 mx-40 w-6/12'
               style={{ overflowX: 'visible' }}>

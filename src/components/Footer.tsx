@@ -1,6 +1,7 @@
 /** @format */
 import { motion } from 'framer-motion';
 import { fadeIn, staggerChildren } from '../assets/motion';
+import React from 'react';
 
 const Footer = () => {
   return (
@@ -120,7 +121,7 @@ const Footer = () => {
           </span>
           <div className='flex mt-4 space-x-6 sm:justify-center md:mt-0'>
             <a
-              href='#'
+              href='https://www.facebook.com/kubkwel99/'
               className='text-gray-400 hover:text-gray-900 dark:hover:text-white'>
               <svg
                 className='w-5 h-5'
@@ -136,7 +137,7 @@ const Footer = () => {
               <span className='sr-only'>Facebook page</span>
             </a>
             <a
-              href='#'
+              href='https://www.instagram.com/adrian_konya_b5/'
               className='text-gray-400 hover:text-gray-900 dark:hover:text-white'>
               <svg
                 className='w-5 h-5'
@@ -152,7 +153,7 @@ const Footer = () => {
               <span className='sr-only'>Instagram page</span>
             </a>
             <a
-              href='#'
+              href='https://x.com/kubkwel99?s=21'
               className='text-gray-400 hover:text-gray-900 dark:hover:text-white'>
               <svg
                 className='w-5 h-5'
@@ -164,7 +165,7 @@ const Footer = () => {
               <span className='sr-only'>Twitter page</span>
             </a>
             <a
-              href='#'
+              href='https://github.com/kubkwel99'
               className='text-gray-400 hover:text-gray-900 dark:hover:text-white'>
               <svg
                 className='w-5 h-5'

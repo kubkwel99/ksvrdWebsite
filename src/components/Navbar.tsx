@@ -5,6 +5,7 @@ import { menuItems } from './MenuItems';
 import './Navbar.scss';
 import { motion } from 'framer-motion';
 import { headerVariants } from '../assets/motion';
+import React from 'react';
 
 class Navbar extends Component {
   state = { clicked: false };

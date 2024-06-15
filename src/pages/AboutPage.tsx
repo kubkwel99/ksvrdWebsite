@@ -1,5 +1,6 @@
 /** @format */
 
+import React from 'react';
 import './AboutPage.scss';
 
 const About = () => {
@@ -13,7 +14,7 @@ const About = () => {
         <div className='leftSide flex flex-col text-left w-2/3'>
           <h2 className=''>Som</h2>
           <h1>Kristína Svoradová</h1>
-          <p className='w-1/2'>
+          <p className='w-1/2 '>
             Som kreatívna hlava s množstvom nápadov, ktoré sa snažím pretvoriť do videí. Tvoreniu
             amatérskych videí sa venujem približne 3 roky a stále ma to neprestalo baviť!{' '}
           </p>

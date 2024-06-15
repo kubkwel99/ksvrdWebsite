@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import { fadeIn, slideIn, staggerChildren, textVariant2, zoomIn } from '../assets/motion';
+import { Link } from 'react-router-dom';
 
 const AboutPage: React.FC = () => {
   return (
@@ -58,7 +59,7 @@ const AboutPage: React.FC = () => {
                   viewBox='0 0 20 20'>
                   <path d='M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z' />
                 </svg>
-                <span>Stiahni si moje CV.</span>{' '}
+                <a href='public/files/Bc. Adrián Kónya.pdf' target="_blank" download>Stiahni si moje CV.</a>{' '}
               </motion.button>
               <motion.button
                 variants={slideIn('up', 'tween', 0.5, 0)}
@@ -89,7 +90,7 @@ const AboutPage: React.FC = () => {
             loop: Infinity,
           }}
           viewport={{ once: false, amount: 0.5 }}
-          className=' flex flex-col pt-8 px-40 mt-28 mx-auto w-full max-w-screen-xl m-auto'>
+          className='py-8 flex flex-col items-center '>
           <motion.div
             variants={fadeIn('down', 'tween', 0.67, 0.5)}
             className='pb-20'>
@@ -97,18 +98,18 @@ const AboutPage: React.FC = () => {
             <p className='text-2xl text-yellow-600'>Čo by si chcel o mne vedieť?</p>
           </motion.div>
 
-          <div className='flex flex-row  justify-between '>
+          <div className='flex flex-col  md:flex-row'>
             <motion.img
               variants={textVariant2}
-              className='rounded-lg '
-              src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8FrEjVuN0wKqRQ1DMBZ3zdrRUS16yAOUnUrfKarP1aZDACKUoCjbgFm7a159yC1YVI3I&usqp=CAU'
+              className='max-w-xs rounded-lg mx-auto shrink-0 sm:max-w-sm'
+              src='./src/assets/img/ksvrd.png'
               alt=''
             />
-            <div className='flex flex-col gap-8'>
+            <div className='items-center justify-center flex flex-col p-8 gap-8 md:items-start'>
               <div className='flex flex-row gap-4'>
                 <motion.div
                   variants={zoomIn(0.6, 0.3)}
-                  className='max-w-sm rounded-lg bg-white overflow-hidden shadow-xl w-60 py-6 bg-yellow-500 cursor-pointer'>
+                  className='max-w-sm rounded-lg overflow-hidden shadow-xl w-60 py-6 bg-yellow-500 cursor-pointer'>
                   <i className='fa-solid fa-medal '></i>
                   <h2 className='pt-4 font-medium'>Skúsenosti</h2>
                   <p>1 rok</p>
@@ -116,10 +117,10 @@ const AboutPage: React.FC = () => {
 
                 <motion.div
                   variants={zoomIn(0.7, 0.1)}
-                  className=' max-w-sm rounded-lg bg-white overflow-hidden shadow-xl w-60 py-6 bg-yellow-400 cursor-pointer'>
+                  className=' max-w-sm rounded-lg  overflow-hidden shadow-xl w-60 py-6 bg-yellow-400 cursor-pointer'>
                   <i className='fa-solid fa-diagram-project'> </i>
                   <h2 className='pt-4 font-medium'>Projekty</h2>
-                  <a href="#portfolio">???</a>
+                  <a href='#portfolio'>???</a>
                 </motion.div>
               </div>
 

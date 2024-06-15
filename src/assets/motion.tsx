@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /** @format */
 import { Variants } from 'framer-motion';
 
@@ -40,7 +41,7 @@ export const slideIn = (direction: string, type: any, delay: any, duration: any)
   },
 });
 
-export const staggerContainer = (staggerChildren: String, delayChildren: string) => ({
+export const staggerContainer = (staggerChildren: string, delayChildren: string) => ({
   hidden: {},
   show: {
     transition: {

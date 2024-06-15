@@ -1,11 +1,11 @@
 /** @format */
 import './App.scss';
 import Navbar from './components/Navbar';
-import About from './pages/AboutPage';
 import HomePage from './pages/HomePage';
 import Footer from './components/Footer';
 import VideoGrid from './pages/Portfolio/VideoGrid';
 import AboutPage from './components/AboutPage';
+import React from 'react';
 
 const App = () => {
   return (
